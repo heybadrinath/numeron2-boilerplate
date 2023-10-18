@@ -81,6 +81,7 @@ function checkAnswers(value){
         score++
         console.log("score:",score)
     }else{
+        window.localStorage.setItem('Final',score)
         window.location.href = "./gameover.html"
         // console.log("gameover")
     }
@@ -99,23 +100,28 @@ for(let i=0;i<btns.length; i++){
         checkAnswers(i)
         inseringRandomNumbers()
         timerCount = 20
-        timerDisplay()
-        
     })
 }
+
 
 // Iteration 7: Making Timer functional
  
 var timer = document.getElementById("timer")
 var timerCount = 20
+
 function timerDisplay() {
     return setInterval(() => {
-        if (timerCount >= 0) {
-            timer.textContent = timerCount; 
+        if (timerCount > 0) {
             timerCount--;
+            timer.textContent = timerCount; 
         } else {
-            window.localStorage.setItem('scoreFinal',score)
+            window.localStorage.setItem('Final',score)
+            // console.log(localStorage)
             window.location.href = "./gameover.html";
         }
     }, 1000);
 }
+
+
+
+
