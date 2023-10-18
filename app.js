@@ -2,5 +2,5 @@
 // Description: When the play button is clicked the game.html page should be opened
 
 document.getElementById("play-button").addEventListener(('click'),()=>{
-    window.location.href = "game.html";
+    window.location.href = "./game.html";
 })
